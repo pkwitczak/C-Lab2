@@ -1,0 +1,12 @@
+name: Publish assignment metadata to GitHub Pages
+
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    uses: pkwitczak/Programming-techniques-teaching-materials/.github/workflows/reusable-publish.yml@main
+    secrets:
+      PAGES_SYNC_TOKEN: ${{ secrets.PAGES_SYNC_TOKEN }}
